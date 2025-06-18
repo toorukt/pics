@@ -1,0 +1,43 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 9090
+proxies:
+  - {name: HK, server: 192.131.142.147, port: 38827, type: vmess, uuid: 89b6ea54-d8a7-4773-9cc8-25bf7813bb1c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /TRC7YZzO/}, udp: true}
+proxy-groups:
+  - name: 🔰 节点选择
+    type: select
+    proxies:
+      - DIRECT
+      - HK
+  -
+    name: 📚 Manga
+    type: select
+    proxies:
+      - DIRECT
+      - HK
+rules:
+
+# Manga
+- DOMAIN-SUFFIX,8comic.com,📚 Manga
+- DOMAIN-SUFFIX,manhuagui.com,📚 Manga
+- DOMAIN-SUFFIX,manhuaren.com,📚 Manga
+- DOMAIN-SUFFIX,manhuadb.com,📚 Manga
+- DOMAIN-SUFFIX,mangabz.com,📚 Manga
+- DOMAIN-SUFFIX,jmcomic.me,📚 Manga
+- DOMAIN-SUFFIX,comicabc.com,📚 Manga
+- DOMAIN-SUFFIX,comicbus.com,📚 Manga
+- DOMAIN-SUFFIX,baozimh.com,📚 Manga
+- DOMAIN-SUFFIX,webmota.com,📚 Manga
+- DOMAIN-SUFFIX,kukuc.co,📚 Manga
+- DOMAIN-SUFFIX,czmanga.com,📚 Manga
+- DOMAIN-SUFFIX,dinnerku.com,📚 Manga
+- DOMAIN-SUFFIX,mangacopy.com,📚 Manga
+- DOMAIN-SUFFIX,hamreus.com,📚 Manga
+- DOMAIN-SUFFIX,dm5.cn,📚 Manga
+- DOMAIN-SUFFIX,manhuadb.com,📚 Manga
+- DOMAIN-SUFFIX,18comic.vip,📚 Manga
+- DOMAIN-SUFFIX,happymh.com,📚 Manga
+- DOMAIN-SUFFIX,manhuacdn.com,📚 Manga
